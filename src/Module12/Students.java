@@ -1,6 +1,6 @@
 package Module12;
 
-public class Student {
+public class Students {
 
     public String Name;
     public String family;
@@ -11,12 +11,12 @@ public class Student {
     public int number_of_completed_tasks;
     public int number_of_completed_modules;
 
-    public Student(String Name, String family, int old) {
+    public Students(String Name, String family, int old) {
         this(Name, family, old,0,"Learning Java",0,
                 0,0);
     }
 
-    public Student(String Name, String family, int old, int experience,
+    public Students(String Name, String family, int old, int experience,
                    String learning_objective, int group_number,
                    int number_of_completed_tasks, int number_of_completed_modules) {
         this.Name = Name;
