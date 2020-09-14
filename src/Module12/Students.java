@@ -10,6 +10,9 @@ public class Students {
     public int group_number;
     public int number_of_completed_tasks;
     public int number_of_completed_modules;
+    private static int taskCount;
+    private static int moduleCount;
+    private static final int MAX_MODULE = 3;
 
     public Students(String Name, String family, int old) {
         this(Name, family, old,0,"Learning Java",0,
@@ -27,6 +30,21 @@ public class Students {
         this.group_number = group_number;
         this.number_of_completed_tasks = number_of_completed_tasks;
         this.number_of_completed_modules = number_of_completed_modules;
+    }
+
+    public static void task_execution(String student, int task) {
+        taskCount++;
+        System.out.println(student + " выполнил задачу № " + task + ". Всего выполнил задач: " + taskCount);
+    }
+
+    public static void module_execution(String student, int module) {
+        if( moduleCount < MAX_MODULE) {
+            moduleCount++;
+            System.out.println(student + " выполнил модуль № " + module + ". Всего выполнил модулей: " + moduleCount);
+        }
+        else {
+            System.out.println("Для " + student + " все модули уже пройдены.");
+        }
     }
 
     public void carry_out_task() {
