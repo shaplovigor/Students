@@ -15,20 +15,18 @@ abstract class Person {
 
     public void setName(String name) { this.name = name; }
 
-    public void getName() { System.out.println( this.name ); }
+    public String getName() { return this.name ; }
 
     public void setAge(int age) {
         this.age = age;
     }
 
-    public void getAge() {
-        System.out.println( this.age );
-    }
+    public int getAge() { return this.age ; }
 
     public void setSurname(String surname) {
         this.surname = surname;
     }
 
-    public void getSurname() { System.out.println( this.surname ); }
+    public String getSurname() { return this.surname ; }
 
 }
