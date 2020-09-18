@@ -1,6 +1,6 @@
 package Module12;
 
-public class Person {
+abstract class Person {
     public String name;
     public String surname;
     private int age;
