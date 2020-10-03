@@ -1,5 +1,7 @@
 package Module12;
 
+import java.util.Objects;
+
 public class Students extends Person {
 
     public String name;
@@ -11,6 +13,7 @@ public class Students extends Person {
     private static int taskCount;
     private static int passedModuleCount;
     private static final int MAX_MODULE = 3;
+    Subject subjectCourse = Subject.JAVA;
 
     public Students(String name, String surname, int age) {
         this(name, surname, age,false,"Learning Java",0);
@@ -44,5 +47,44 @@ public class Students extends Person {
     public void passTheModule() {  }
 
     public void communicateEithTheCurator() {  }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Students)) return false;
+        Students students = (Students) o;
+        return age == students.age &&
+                experienced == students.experienced &&
+                group == students.group &&
+                name.equals(students.name) &&
+                surname.equals(students.surname) &&
+                Objects.equals(learningObjective, students.learningObjective);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, age, experienced, learningObjective, group);
+    }
+
+    @Override
+    public String toString() {
+        return "Students{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", age=" + age +
+                ", experienced=" + experienced +
+                ", learningObjective='" + learningObjective + '\'' +
+                ", group=" + group +
+                '}';
+    }
+
+    public enum Subject {
+        JAVA,
+        ANDROID,
+        WEB,
+        UX,
+        PHYTON,
+        PROJECT_MANAGEMENT
+    }
 
 }
